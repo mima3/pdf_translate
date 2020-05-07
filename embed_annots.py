@@ -1,7 +1,6 @@
 import sys
 import fitz
 import csv
-import requests
 import json
 from tqdm import tqdm
 
