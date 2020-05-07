@@ -63,5 +63,6 @@ http://needtec.sakura.ne.jp/doc/tmp/output.pdf
 **注意**
 
  - オリジナルに比べてサイズが大きくなっている
- - 注釈の内容はブラウザで見ると文字化けする。AdobeReaderで見ると文字化けしない 
- - スマホで閲覧すると注釈のポップアップが表示されない。
+ - Adobe Acrobat Readerで閲覧しないと旨く表示されない
+   - WindowsのChromeの場合、ブラウザで見ると文字化けする。
+   - スマホのPDFViewerで閲覧すると注釈のポップアップが表示されない。
