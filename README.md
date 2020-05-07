@@ -55,3 +55,12 @@ analyze_pdf_text.py PDF32000_2008.pdf
 ```
 python embed_annots.py PDF32000_2008.pdf.json output.pdf
 ```
+
+以下が実際、注釈を付与したPDFになります。
+
+http://needtec.sakura.ne.jp/doc/tmp/output.pdf
+
+**注意**
+
+ - オリジナルに比べてサイズが大きくなっている
+ - 注釈の内容はブラウザで見ると文字化けする。AdobeReaderで見ると文字化けしない 
