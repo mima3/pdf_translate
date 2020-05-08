@@ -19,10 +19,11 @@ def authenticate(client_secret_json_path):
     https://developers.google.com/drive/api/v3/quickstart/python
     """
     creds = None
+    token_path = '{}/token.pickle'.format(os.path.dirname(__file__))
     # ファイルtoken.pickleはユーザーのアクセストークンと更新トークンを格納し、
     # 認証フローが初めて完了すると自動的に作成されます。
-    if os.path.exists('token.pickle'):
-        with open('token.pickle', 'rb') as token:
+    if os.path.exists(token_path):
+        with open(token_path, 'rb') as token:
             creds = pickle.load(token)
     # 有効な資格情報がない場合は、ユーザーにログインさせます。
     if not creds or not creds.valid:
@@ -37,7 +38,7 @@ def authenticate(client_secret_json_path):
             creds = flow.run_local_server(port=0)
         # 次回実行のために「google.oauth2.credentials.Credentials」をシリアライズ化して保存します。
         # https://google-auth.readthedocs.io/en/latest/reference/google.oauth2.credentials.html
-        with open('token.pickle', 'wb') as token:
+        with open(token_path, 'wb') as token:
             pickle.dump(creds, token)
     return creds
 

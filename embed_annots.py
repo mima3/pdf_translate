@@ -22,17 +22,20 @@ def main(argvs):
     with open(string_path, 'r', encoding='utf8', newline="\n") as fp:
         reader = csv.reader(fp)
         for row in reader:
-            string_info[row[0]] = row[1]
+            string_info[row[0].strip()] = row[1]
     doc = fitz.open(json_info['input_path'])
 
     for text_block in tqdm(json_info["text_block"]):
-        if text_block['text'] in string_info:
-            txt = string_info[text_block['text']]
+        txt = text_block['text'].strip()
+        if txt in string_info:
+            txt = string_info[txt]
             page = doc[text_block['page']]
             page.addTextAnnot(
                 (text_block['x1'] - 20, text_block['y1'] - 20),
                 txt
             )
+        else:
+            print("翻訳に失敗：", text_block['text'])
 
     doc.save(out_path, garbage=1, clean=1, deflate=1) 
 
