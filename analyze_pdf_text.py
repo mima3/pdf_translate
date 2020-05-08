@@ -17,8 +17,7 @@ def main(input_path):
     result = []
     pno = 0
     for page in tqdm(doc):
-        wordlist = page.getTextWords()  # gives you a list of all words on the
-        blocklist = page.getTextBlocks()
+        blocklist = page.getText('blocks')
         for block in blocklist:
             r = fitz.Rect(block[0], block[1], block[2], block[3])
             txt = block[4].replace('\n', '').replace('\r', '')
