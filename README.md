@@ -46,7 +46,7 @@ https://developers.google.com/sheets/api/quickstart/python
 2. 下記のコマンドを使用して翻訳対象のPDFから、そのテキスト情報と位置を記録したJSONと、テキストの一覧を記録したCSVを作成します。
 
 ```
-analyze_pdf_text.py PDF32000_2008.pdf
+python ./analyze_pdf_text.py PDF32000_2008.pdf
 ```
 
 3. 下記のファイルが作成されている事を確認します。  
@@ -59,14 +59,14 @@ analyze_pdf_text.py PDF32000_2008.pdf
 これを自動化したスクリプトは以下のようになります。  
 
 ```
-python translate_google_sheets.py PDF32000_2008.pdf.csv client_secret.json
+python ./translate_google_sheets.py PDF32000_2008.pdf.csv client_secret.json
 ```
 
 
 5. 下記のコマンドを実行して訳を注釈として埋め込みます  
 
 ```
-python embed_annots.py PDF32000_2008.pdf.json output.pdf
+python ./embed_annots.py PDF32000_2008.pdf.json output.pdf
 ```
 
 以下が実際、注釈を付与したPDFになります。
